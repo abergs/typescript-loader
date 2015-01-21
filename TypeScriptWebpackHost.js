@@ -106,10 +106,10 @@ TypeScriptWebpackHost.prototype.getDefaultLibFilename = function getDefaultLibFi
  * Implementation of TypeScript Language Services Host interface.
  */
  
-var logCount = 0;
+var logCount = 0, skipMessages = 100;
 TypeScriptWebpackHost.prototype.log = function log(message) {
   logCount += 1;
-  if(logCount % 20) {
+  if(logCount % skipMessages) {
     return console.log("Working... " + message);
   } 
   //return console.log(message);
